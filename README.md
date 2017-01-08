@@ -1,8 +1,11 @@
 # App lock library for Android
+[![](https://jitpack.io/v/balrampandey19/AppLocker.svg)](https://jitpack.io/#balrampandey19/AppLocker)
+[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 
 <img align="center" src='https://raw.githubusercontent.com/balrampandey19/AppLocker/master/Screen/icon.png' width='200' height='200'/>
 
-AppLocker is a library for protect app with four digit pin.
+App is a library for protect app with four digit pin.
 
 This library allows you to implement a pin lock mechanism in your app easily.
 
@@ -19,7 +22,6 @@ Once enabled a four-digit passcode needs to be entered any time your mobile app 
  AppLocker.getInstance().enableAppLock(this);
 ```
 
-
 #### Extend LockActivity in all app activity as base activity.
 
 ```
@@ -33,24 +35,36 @@ Once enabled a four-digit passcode needs to be entered any time your mobile app 
  
  }
 ```
+#### Proguard
+
+```
+ -dontwarn com.balram.locker.**
+```
+
+
 # Download
 
-#### The Gradle dependency is available via jCenter. jCenter is the default Maven repository used by Android Studio.
-
-
-```
-dependencies {
-
-compile 'com.redcarpet.locker:1.0.0'
-
+#### Add it to your build.gradle with:
+```gradle
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
 }
-
 ```
+and:
+
+```gradle
+dependencies {
+    compile 'com.github.balrampandey19:AppLocaker:1.0.1'
+}
+```
+
 
 # License
 
 ```
-   Copyright 2016 Redcarpet
+      Copyright 2016 Balram Pandey
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
